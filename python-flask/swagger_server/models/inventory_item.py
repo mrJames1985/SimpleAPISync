@@ -16,7 +16,7 @@ class InventoryItem(Model):
     Do not edit the class manually.
     """
 
-    def __init__(self, id: str=None, name: str=None, release_date: str=None, manufacturer: Manufacturer=None):  # noqa: E501
+    def __init__(self, id: str=None, name: str=None, release_date: str=None, manufacturer: Manufacturer=None, warrenty: str=None):  # noqa: E501
         """InventoryItem - a model defined in Swagger
 
         :param id: The id of this InventoryItem.  # noqa: E501
@@ -27,25 +27,30 @@ class InventoryItem(Model):
         :type release_date: str
         :param manufacturer: The manufacturer of this InventoryItem.  # noqa: E501
         :type manufacturer: Manufacturer
+        :param warrenty: The warrenty of this InventoryItem.  # noqa: E501
+        :type warrenty: str
         """
         self.swagger_types = {
             'id': str,
             'name': str,
             'release_date': str,
-            'manufacturer': Manufacturer
+            'manufacturer': Manufacturer,
+            'warrenty': str
         }
 
         self.attribute_map = {
             'id': 'id',
             'name': 'name',
             'release_date': 'releaseDate',
-            'manufacturer': 'manufacturer'
+            'manufacturer': 'manufacturer',
+            'warrenty': 'warrenty'
         }
 
         self._id = id
         self._name = name
         self._release_date = release_date
         self._manufacturer = manufacturer
+        self._warrenty = warrenty
 
     @classmethod
     def from_dict(cls, dikt) -> 'InventoryItem':
@@ -149,3 +154,24 @@ class InventoryItem(Model):
             raise ValueError("Invalid value for `manufacturer`, must not be `None`")  # noqa: E501
 
         self._manufacturer = manufacturer
+
+    @property
+    def warrenty(self) -> str:
+        """Gets the warrenty of this InventoryItem.
+
+
+        :return: The warrenty of this InventoryItem.
+        :rtype: str
+        """
+        return self._warrenty
+
+    @warrenty.setter
+    def warrenty(self, warrenty: str):
+        """Sets the warrenty of this InventoryItem.
+
+
+        :param warrenty: The warrenty of this InventoryItem.
+        :type warrenty: str
+        """
+
+        self._warrenty = warrenty
