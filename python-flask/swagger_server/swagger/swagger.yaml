@@ -86,6 +86,32 @@ paths:
         409:
           description: "an existing item already exists"
       x-swagger-router-controller: "swagger_server.controllers.admins_controller"
+    put:
+      tags:
+      - "admins"
+      summary: "update an inventory item"
+      description: "Adds an item to the system"
+      operationId: "update_inventory"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      - "application/xml"
+      parameters:
+      - in: "body"
+        name: "inventoryItem"
+        description: "Inventory item to update"
+        required: false
+        schema:
+          $ref: "#/definitions/InventoryItem"
+      responses:
+        201:
+          description: "item updated"
+        400:
+          description: "invalid input, object invalid"
+        404:
+          description: "item does not exists"
+      x-swagger-router-controller: "swagger_server.controllers.admins_controller"
 definitions:
   InventoryItem:
     type: "object"
