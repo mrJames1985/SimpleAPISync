@@ -70,6 +70,7 @@ paths:
       - "application/json"
       produces:
       - "application/json"
+      - "application/xml"
       parameters:
       - in: "body"
         name: "inventoryItem"
