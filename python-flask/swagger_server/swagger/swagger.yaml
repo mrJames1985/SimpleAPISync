@@ -14,7 +14,7 @@ basePath: "/SmartBear-CC/TestManagedPaths/1.0.0"
 tags:
 - name: "admins123"
   description: "Secured Admin-only calls"
-- name: "developers"
+- name: "developers12345"
   description: "Operations available to regular developers"
 schemes:
 - "https"
